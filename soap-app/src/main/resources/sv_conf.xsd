@@ -1,0 +1,60 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:sv="http://epolsoft.com/model/sv_conf"
+           targetNamespace="http://epolsoft.com/model/sv_conf"
+           elementFormDefault="qualified">
+
+<!--    Find all svConfs-->
+    <xs:element name="getAllSvConfRequest">
+        <xs:complexType>
+            <xs:sequence>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="getAllSvConfResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="svConfs" type="sv:svConf" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+<!--    Add svConf-->
+    <xs:element name="addSvConfRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="svConf" type="sv:svConf"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+<!--    Update svConf-->
+    <xs:element name="updateSvConfRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="svConf" type="sv:svConf"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+<!-- Delete svConf by name-->
+    <xs:element name="deleteSvConfRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+<!--    Object svConf-->
+    <xs:complexType name="svConf">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="value" type="xs:string"/>
+            <xs:element name="desc" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
