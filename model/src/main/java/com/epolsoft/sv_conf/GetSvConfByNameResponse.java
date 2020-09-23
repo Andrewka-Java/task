@@ -10,6 +10,7 @@ package com.epolsoft.sv_conf;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -24,6 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
+ *         &lt;element name="svConf" type="{http://epolsoft.com/sv_conf}svConf"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -33,9 +35,37 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "")
-@XmlRootElement(name = "getAllSvConfRequest")
-public class GetAllSvConfRequest {
+@XmlType(name = "", propOrder = {
+    "svConf"
+})
+@XmlRootElement(name = "getSvConfByNameResponse")
+public class GetSvConfByNameResponse {
 
+    @XmlElement(required = true)
+    protected SvConf svConf;
+
+    /**
+     * Gets the value of the svConf property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link SvConf }
+     *     
+     */
+    public SvConf getSvConf() {
+        return svConf;
+    }
+
+    /**
+     * Sets the value of the svConf property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link SvConf }
+     *     
+     */
+    public void setSvConf(SvConf value) {
+        this.svConf = value;
+    }
 
 }

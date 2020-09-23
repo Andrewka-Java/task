@@ -33,7 +33,7 @@ public class SoapConfig extends WsConfigurerAdapter {
 
         wsdl11Definition.setPortTypeName("sv_conf_port");
         wsdl11Definition.setLocationUri("/ws/sv_conf");
-        wsdl11Definition.setTargetNamespace("http://epolsoft.com/model/sv_conf");
+        wsdl11Definition.setTargetNamespace("http://epolsoft.com/sv_conf");
         wsdl11Definition.setSchema(svConfSchema);
 
         return wsdl11Definition;

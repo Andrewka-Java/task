@@ -22,8 +22,6 @@
     <properties>
         <java.version>1.8</java.version>
 
-        <slf4j.version>2.0.0-alpha1</slf4j.version>
-
         <spring-boot.version>2.2.6.RELEASE</spring-boot.version>
         <spring-ws.version>3.0.8.RELEASE</spring-ws.version>
     </properties>
@@ -59,12 +57,6 @@
                 <groupId>com.epolsoft</groupId>
                 <artifactId>soap-app</artifactId>
                 <version>${project.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${slf4j.version}</version>
             </dependency>
 
             <dependency>
@@ -129,7 +121,7 @@
 <!--                <configuration>-->
 <!--                    <schemaDirectory>soap-app/src/main/resources/</schemaDirectory>-->
 <!--                    <outputDirectory>model/src/main/java/</outputDirectory>-->
-<!--&lt;!&ndash;                    <clearOutputDir>true</clearOutputDir>&ndash;&gt;-->
+<!--                    <clearOutputDir>true</clearOutputDir>-->
 <!--                </configuration>-->
 <!--            </plugin>-->
         </plugins>

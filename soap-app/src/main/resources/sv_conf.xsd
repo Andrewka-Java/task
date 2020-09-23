@@ -20,6 +20,23 @@
         </xs:complexType>
     </xs:element>
 
+<!--    Find svConf by name-->
+    <xs:element name="getSvConfByNameRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getSvConfByNameResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="svConf" type="sv:svConf"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
 <!--    Add svConf-->
     <xs:element name="addSvConfRequest">
         <xs:complexType>
