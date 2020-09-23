@@ -15,6 +15,9 @@ public interface SvConfRepo {
     @Select("SELECT name, value, desc FROM sv_conf")
     List<SvConf> findAll();
 
+    @Select("SELECT name, value, desc FROM sv_conf WHERE name = #{name}")
+    SvConf findByName(@Param("name") String name);
+
     @Insert("INSERT INTO sv_conf (name, value, desc) VALUES (#{svConf.name}, #{svConf.value}, #{svConf.desc}))")
     void add(@Param("svConf") SvConf svConf);
 
