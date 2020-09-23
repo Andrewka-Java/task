@@ -12,7 +12,7 @@
     <artifactId>soap-app</artifactId>
 
 
-    <dependencies>
+     <dependencies>
         <dependency>
             <groupId>com.epolsoft</groupId>
             <artifactId>model</artifactId>

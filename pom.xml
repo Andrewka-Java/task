@@ -11,18 +11,20 @@
 
 
     <modules>
-        <module>dao</module>
-        <module>dao-api</module>
-        <module>service</module>
-        <module>service-api</module>
         <module>soap-app</module>
         <module>model</module>
+        <module>dao-api</module>
+        <module>dao</module>
+        <module>service-api</module>
+        <module>service</module>
     </modules>
 
     <properties>
         <java.version>1.8</java.version>
         <spring-boot.version>2.2.6.RELEASE</spring-boot.version>
         <spring-ws.version>3.0.8.RELEASE</spring-ws.version>
+
+        <main.basedir>${project.basedir}</main.basedir>
     </properties>
 
     <dependencyManagement>
@@ -98,6 +100,25 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxb2-maven-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>xjc</id>
+                        <goals>
+                            <goal>xjc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <schemaDirectory>soap-app/src/main/resources/</schemaDirectory>
+                    <outputDirectory>model/src/main/java</outputDirectory>
+                    <clearOutputDir>true</clearOutputDir>
+                </configuration>
             </plugin>
         </plugins>
     </build>

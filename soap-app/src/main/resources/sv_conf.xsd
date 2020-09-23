@@ -1,6 +1,6 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns:sv="http://epolsoft.com/model/sv_conf"
-           targetNamespace="http://epolsoft.com/model/sv_conf"
+           xmlns:sv="http://epolsoft.com/sv_conf"
+           targetNamespace="http://epolsoft.com/sv_conf"
            elementFormDefault="qualified">
 
 <!--    Find all svConfs-->
