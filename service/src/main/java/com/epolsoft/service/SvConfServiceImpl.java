@@ -1,6 +1,7 @@
 package com.epolsoft.service;
 
-import com.epolsoft.dao.SvConfRepo;
+
+import com.epolsoft.dao.SvConfDao;
 import com.epolsoft.sv_conf.SvConf;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,23 +12,22 @@ import java.util.List;
 
 
 @Service
-public class SvConfServiceImpl implements SvConfService{
+public class SvConfServiceImpl{
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SvConfServiceImpl.class);
 
-    private final SvConfRepo svConfRepo;
-
+    private final SvConfDao svConfDao;
 
     @Autowired
-    public SvConfServiceImpl(SvConfRepo svConfRepo) {
-        this.svConfRepo = svConfRepo;
+    public SvConfServiceImpl(SvConfDao svConfDao) {
+        this.svConfDao = svConfDao;
     }
 
 
     public List<SvConf> findAll() {
         LOGGER.debug("Method findAll is executing");
 
-        List<SvConf> svConfs = svConfRepo.findAll();
+        List<SvConf> svConfs = svConfDao.findAll();
 
         LOGGER.debug("Method findAll was executed with result = {}", svConfs);
 
@@ -38,7 +38,7 @@ public class SvConfServiceImpl implements SvConfService{
     public SvConf findByName(String name) {
         LOGGER.debug("Method findByName is executing with param: (name = {})", name);
 
-        SvConf svConf = svConfRepo.findByName(name);
+        SvConf svConf = svConfDao.findByName(name);
 
         LOGGER.debug("Method findByName was executed with result: (object = {})", svConf);
 
@@ -49,7 +49,7 @@ public class SvConfServiceImpl implements SvConfService{
     public void add(SvConf svConf) {
         LOGGER.debug("Method add is executing with param: (object = {})", svConf);
 
-        svConfRepo.add(svConf);
+        svConfDao.add(svConf);
 
         LOGGER.debug("Method add was executed");
     }
@@ -58,7 +58,7 @@ public class SvConfServiceImpl implements SvConfService{
     public void update(SvConf svConf) {
         LOGGER.debug("Method update is executing with param: (object = {})", svConf);
 
-        svConfRepo.update(svConf);
+        svConfDao.update(svConf);
 
         LOGGER.debug("Method update was executed");
     }
@@ -67,7 +67,7 @@ public class SvConfServiceImpl implements SvConfService{
     public void delete(String name) {
         LOGGER.debug("Method delete is executing with param: (name = {})", name);
 
-        svConfRepo.delete(name);
+        svConfDao.delete(name);
 
         LOGGER.debug("Method add was executed");
     }

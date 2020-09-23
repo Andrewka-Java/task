@@ -10,7 +10,7 @@ import java.util.List;
 
 @Mapper
 @Repository
-public interface SvConfRepo {
+public interface SvConfDao {
 
     @Select("SELECT name, value, desc FROM sv_conf")
     List<SvConf> findAll();
