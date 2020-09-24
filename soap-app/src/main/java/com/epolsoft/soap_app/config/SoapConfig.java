@@ -27,7 +27,7 @@ public class SoapConfig extends WsConfigurerAdapter {
         return new ServletRegistrationBean(servlet, "/ws/*");
     }
 
-    @Bean
+    @Bean(name="sv_conf")
     public DefaultWsdl11Definition svConfWsdlDefinition(XsdSchema svConfSchema) {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
 
