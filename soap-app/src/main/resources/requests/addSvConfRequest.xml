@@ -1,0 +1,15 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:sv="http://epolsoft.com/sv_conf">
+
+    <soapenv:Header/>
+    <soapenv:Body>
+        <sv:addSvConfRequest>
+            <sv:svConf>
+                <sv:name>Java15</sv:name>
+                <sv:value>Java15</sv:value>
+                <sv:desc>new version</sv:desc>
+            </sv:svConf>
+        </sv:addSvConfRequest>
+    </soapenv:Body>
+
+</soapenv:Envelope>

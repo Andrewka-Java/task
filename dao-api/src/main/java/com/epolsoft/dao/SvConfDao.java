@@ -18,10 +18,10 @@ public interface SvConfDao {
     @Select("SELECT name, value, desc FROM sv_conf WHERE name = #{name}")
     SvConf findByName(@Param("name") String name);
 
-    @Insert("INSERT INTO sv_conf (name, value, desc) VALUES (#{svConf.name}, #{svConf.value}, #{svConf.desc}))")
+    @Insert("INSERT INTO sv_conf (name, value, desc) VALUES (#{svConf.name}, #{svConf.value}, #{svConf.desc})")
     void add(@Param("svConf") SvConf svConf);
 
-    @Update("UPDATE svConf SET value = #{svConf.value}, desc = #{svConf.desc}")
+    @Update("UPDATE sv_conf SET value = #{svConf.value}, desc = #{svConf.desc}")
     void update(@Param("svConf") SvConf svConf);
 
     @Delete("DELETE FROM sv_conf WHERE name = #{name}")

@@ -1,0 +1,11 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:sv="http://epolsoft.com/sv_conf">
+
+    <soapenv:Header/>
+    <soapenv:Body>
+        <sv:deleteSvConfRequest>
+            <sv:name>Java11</sv:name>
+        </sv:deleteSvConfRequest>
+    </soapenv:Body>
+
+</soapenv:Envelope>
