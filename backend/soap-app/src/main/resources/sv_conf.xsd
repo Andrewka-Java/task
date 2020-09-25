@@ -12,7 +12,7 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    
+
     <xs:element name="getAllSvConfResponse">
         <xs:complexType>
             <xs:sequence>
@@ -69,10 +69,10 @@
 <!--    Object svConf-->
     <xs:complexType name="svConf">
         <xs:sequence>
-            <xs:element name="name" type="xs:string">
+            <xs:element name="name">
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
-                        <xs:pattern value="([a-zA-Z_]*)"/>
+                        <xs:pattern value="[a-zA-Z_]*"/>
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
@@ -82,3 +82,4 @@
     </xs:complexType>
 
 </xs:schema>
+

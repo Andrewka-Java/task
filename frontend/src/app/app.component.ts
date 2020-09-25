@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {SvConfService} from './service/sv-conf-service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'frontend';
+
+
+  constructor(private service: SvConfService) {
+    this.service.findAll();
+  }
+
 }

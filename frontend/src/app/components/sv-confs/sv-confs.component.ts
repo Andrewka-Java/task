@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {SvConf} from '../../model/SvConf';
+import {SvConfService} from '../../service/sv-conf-service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-sv-confs',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SvConfsComponent implements OnInit {
 
-  constructor() { }
+  svConfs: SvConf[];
+
+  constructor(private svConfService: SvConfService,
+              private route: ActivatedRoute) {
+
+  }
 
   ngOnInit(): void {
+    // this.svConfService.findAll().;
   }
 
 }
