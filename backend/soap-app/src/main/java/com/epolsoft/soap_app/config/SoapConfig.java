@@ -56,14 +56,6 @@ public class SoapConfig extends WsConfigurerAdapter {
         return new SimpleXsdSchema(new ClassPathResource("sv_conf.xsd"));
     }
 
-    @Override
-    public void addInterceptors(List<EndpointInterceptor> interceptors) {
-
-        // register global interceptor
-        interceptors.add(new HttpHeaderInterceptor());
-        super.addInterceptors(interceptors);
-
-    }
 
     @Bean
     public CorsFilter corsFilter() {
