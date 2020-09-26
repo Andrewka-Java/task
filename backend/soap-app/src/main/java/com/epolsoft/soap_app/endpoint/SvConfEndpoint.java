@@ -15,7 +15,6 @@ import java.util.List;
 
 
 @Endpoint
-//@CrossOrigin(origins = "*")
 public class SvConfEndpoint {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SvConfEndpoint.class);
@@ -85,7 +84,7 @@ public class SvConfEndpoint {
 
     @PayloadRoot(namespace = URI, localPart = "deleteSvConfRequest")
     public void deleteSvConf(@RequestPayload DeleteSvConfRequest request) {
-        LOGGER.debug("Method updateSvConf is starting with param (name = {})", request.getName());
+        LOGGER.debug("Method deleteSvConf is starting with param (name = {})", request.getName());
 
         svConfService.delete(request.getName());
 

@@ -7,7 +7,6 @@ import { SvConfComponent } from './components/sv-conf/sv-conf.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
-import {NgxSoapModule} from 'ngx-soap';
 
 @NgModule({
   declarations: [
@@ -19,8 +18,7 @@ import {NgxSoapModule} from 'ngx-soap';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule,
-    NgxSoapModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
