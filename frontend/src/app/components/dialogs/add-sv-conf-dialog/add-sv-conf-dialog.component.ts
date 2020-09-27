@@ -25,9 +25,10 @@ export class AddSvConfDialogComponent implements OnInit {
   }
 
 
-  add() {
-
+  add(svConf: SvConf) {
+    this.service.add(svConf);
   }
+
 
   closeDialog(): void {
     this.display = 'none';

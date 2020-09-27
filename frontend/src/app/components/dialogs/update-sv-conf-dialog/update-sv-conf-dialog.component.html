@@ -12,13 +12,12 @@
             </div>
 
             <div class="modal-body">
-                Please to fill the gaps.<br>
-                After it touch the 'Task' in navbar
+                Please to fill the gaps
             </div>
 
             <div class="container">
-                <form #addForm="ngForm"
-                    id="addForm">
+                <form #updateForm="ngForm"
+                      id="addForm">
 
                     <div class="form-group">
                         <input
@@ -26,7 +25,8 @@
                             name="name"
                             class="form-control"
                             type="text"
-                            placeholder="Enter a name"/>
+                            placeholder="Enter a name(should be the same*)"
+                            />
                     </div>
 
                     <div class="form-group">
@@ -53,7 +53,7 @@
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeDialog()">Cancel</button>
-                <button type="button" class="btn btn-warning" (click)="add(addForm.value); closeDialog()">Add</button>
+                <button type="button" class="btn btn-warning" (click)="update(updateForm.value); closeDialog()">Update</button>
 
             </div>
 

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {SvConfService} from './service/sv-conf-service';
 import {SvConf} from './model/SvConf';
-import {Observable} from 'rxjs';
+
 
 @Component({
   selector: 'app-root',
@@ -11,8 +11,11 @@ import {Observable} from 'rxjs';
 export class AppComponent implements OnInit {
 
   svConfs: SvConf[];
-  displayAddSvConfModal = 'none'
   svConf: SvConf;
+
+  displayAddSvConfModal = 'none';
+  displayUpdateSvConfModal = 'none';
+
 
   constructor(private service: SvConfService) {
   }
@@ -22,21 +25,42 @@ export class AppComponent implements OnInit {
   }
 
 
+
   findAll() {
+
     this.service.findAll().subscribe(value => this.svConfs = value);
+  }
+
+  findByName(name: string) {
+    console.log(name);
+    this.service.findByName(name).subscribe(value => {
+      this.svConfs.length = 0;
+      this.svConfs.push(value);
+    });
   }
 
   delete(name: string) {
     this.service.delete(name);
+    this.svConfs = this.svConfs.filter(value => value.name !== name);
   }
 
 
 
-  openDialog(): void {
+  openAddDialog(): void {
     this.displayAddSvConfModal = 'block';
   }
 
-  svConfCloseDialog($event): void {
+  openUpdateDialog(): void {
+    this.displayUpdateSvConfModal = 'block';
+  }
+
+  svConfCloseAddDialog($event): void {
     this.displayAddSvConfModal = $event;
   }
+
+  svConfCloseUpdateDialog($event): void {
+    this.displayUpdateSvConfModal = $event;
+  }
+
+
 }

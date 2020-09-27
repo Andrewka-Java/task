@@ -6,11 +6,13 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { AddSvConfDialogComponent } from './components/dialogs/add-sv-conf-dialog/add-sv-conf-dialog.component';
 import {AppRoutingModule} from './app-routing.module';
+import { UpdateSvConfDialogComponent } from './components/dialogs/update-sv-conf-dialog/update-sv-conf-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddSvConfDialogComponent
+    AddSvConfDialogComponent,
+    UpdateSvConfDialogComponent
   ],
   imports: [
     BrowserModule,
