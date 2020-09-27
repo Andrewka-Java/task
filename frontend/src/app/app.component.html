@@ -13,7 +13,8 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link link-pointer">Add</a>
+                <a class="nav-link link-pointer"
+                    (click)="openDialog()">Add</a>
             </li>
         </ul>
     </div>
@@ -55,3 +56,8 @@
         </div>
     </div>
 </section>
+
+<app-add-sv-conf-dialog [display]="displayAddSvConfModal"
+                        [svConf]="svConf"
+                        (displayAddSvConfModal)="svConfCloseDialog($event)"></app-add-sv-conf-dialog>
+
