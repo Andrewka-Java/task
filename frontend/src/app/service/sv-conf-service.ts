@@ -24,7 +24,6 @@ export class SvConfService {
 
 
     constructor(private http: HttpClient) {
-
     }
 
 

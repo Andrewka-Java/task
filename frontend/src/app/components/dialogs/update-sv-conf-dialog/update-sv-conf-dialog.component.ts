@@ -27,6 +27,7 @@ export class UpdateSvConfDialogComponent implements OnInit {
 
   }
 
+
   update(svConf: SvConf) {
     console.log(svConf)
     this.service.update(svConf);

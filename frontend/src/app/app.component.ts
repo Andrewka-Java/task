@@ -25,7 +25,6 @@ export class AppComponent implements OnInit {
   }
 
 
-
   findAll() {
 
     this.service.findAll().subscribe(value => this.svConfs = value);
@@ -43,7 +42,6 @@ export class AppComponent implements OnInit {
     this.service.delete(name);
     this.svConfs = this.svConfs.filter(value => value.name !== name);
   }
-
 
 
   openAddDialog(): void {

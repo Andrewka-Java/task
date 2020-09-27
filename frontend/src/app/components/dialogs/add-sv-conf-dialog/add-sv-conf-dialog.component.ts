@@ -18,8 +18,9 @@ export class AddSvConfDialogComponent implements OnInit {
   displayAddSvConfModal = new EventEmitter<string>();
 
 
-  constructor(private service: SvConfService) { }
+  constructor(private service: SvConfService) {
 
+  }
 
   ngOnInit(): void {
   }
@@ -28,7 +29,6 @@ export class AddSvConfDialogComponent implements OnInit {
   add(svConf: SvConf) {
     this.service.add(svConf);
   }
-
 
   closeDialog(): void {
     this.display = 'none';
