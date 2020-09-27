@@ -116,7 +116,7 @@
 <!--                <configuration>-->
 <!--                    <schemaDirectory>soap-app/src/main/resources/</schemaDirectory>-->
 <!--                    <outputDirectory>model/src/main/java/</outputDirectory>-->
-<!--                    <clearOutputDir>true</clearOutputDir>-->
+<!--                    <clearOutputDir>false</clearOutputDir>-->
 <!--                </configuration>-->
 <!--            </plugin>-->
         </plugins>
