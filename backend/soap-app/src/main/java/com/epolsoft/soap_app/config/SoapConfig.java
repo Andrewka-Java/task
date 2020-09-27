@@ -52,6 +52,7 @@ public class SoapConfig extends WsConfigurerAdapter {
     public CorsFilter corsFilter() {
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         final CorsConfiguration config = new CorsConfiguration();
+
         config.setAllowCredentials(true);
         config.addAllowedOrigin("*"); // this allows all origin
         config.addAllowedHeader("*"); // this allows all headers
@@ -63,6 +64,7 @@ public class SoapConfig extends WsConfigurerAdapter {
         config.addAllowedMethod("DELETE");
         config.addAllowedMethod("PATCH");
         source.registerCorsConfiguration("/**", config);
+
         return new CorsFilter(source);
     }
 }

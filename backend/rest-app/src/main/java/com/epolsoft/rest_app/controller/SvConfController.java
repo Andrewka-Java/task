@@ -30,33 +30,43 @@ public class SvConfController {
 
     @GetMapping("/sv_confs")
     public List<SvConf> findAll() {
-        LOGGER.debug("Method findAll");
-        return client.findAll();
+        LOGGER.debug("Method findAll is executing");
+        List<SvConf> svConfs = client.findAll();
+
+        LOGGER.debug("Method findAll was executed with (result: {})", svConfs);
+        return svConfs;
     }
 
     @GetMapping("/sv_confs/{name}")
     public SvConf findByName(@PathVariable("name") String name) {
-        LOGGER.debug("Method findByName");
-        return client.findByName(name);
+        LOGGER.debug("Method findByName is executing with (param: {})", name);
+        SvConf svConf = client.findByName(name);
+
+        LOGGER.debug("Method findByName is executing with (result: {})", svConf);
+        return svConf;
     }
 
     @PostMapping("/sv_confs")
     public void addSvConf(@RequestBody SvConf svConf) {
-        LOGGER.debug("Method addSvConf");
+        LOGGER.debug("Method addSvConf is executing with (param: {})", svConf);
         client.addSvConf(svConf);
+        LOGGER.debug("Method addSvConf was executed");
+
     }
 
     @PutMapping("/sv_confs")
     public void updateSvConf(@RequestBody SvConf svConf) {
-        LOGGER.debug("Method updateSvConf");
+        LOGGER.debug("Method updateSvConf is executing with (param: {})", svConf);
         client.updateSvConf(svConf);
+        LOGGER.debug("Method updateSvConf was executed");
     }
 
 
     @DeleteMapping("/sv_confs/{name}")
     public void deleteSvConf(@PathVariable String name) {
-        LOGGER.debug("Method deleteSvConf");
+        LOGGER.debug("Method deleteSvConf is executing with (param: {})", name);
         client.deleteSvConf(name);
+        LOGGER.debug("Method deleteSvConf was executed");
 
     }
 

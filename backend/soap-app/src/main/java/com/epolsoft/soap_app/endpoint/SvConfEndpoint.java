@@ -33,14 +33,12 @@ public class SvConfEndpoint {
     @PayloadRoot(namespace = URI, localPart = "getAllSvConfRequest")
     @ResponsePayload
     public GetAllSvConfResponse getAllSvConf(@RequestPayload GetAllSvConfRequest request) {
-        LOGGER.debug("Method getAllSvConf is starting with param (request = {})", "");
+        LOGGER.debug("Method getAllSvConf is starting with (param: {})", request.toString());
         GetAllSvConfResponse response = new GetAllSvConfResponse();
 
         List<SvConf> svConfs = svConfService.findAll();
-
         response.getSvConfs().addAll(svConfs);
-
-        LOGGER.debug("Method getAllSvConf was executed with (objects = {})", response.getSvConfs());
+        LOGGER.debug("Method getAllSvConf was executed with (result: {})", response.getSvConfs());
 
         return response;
     }
@@ -49,14 +47,12 @@ public class SvConfEndpoint {
     @PayloadRoot(namespace = URI, localPart ="getSvConfByNameRequest" )
     @ResponsePayload
     public GetSvConfByNameResponse getSvConfByName(@RequestPayload GetSvConfByNameRequest request) {
-        LOGGER.debug("Method getSvConfByName is starting with param (name = {})", request.getName());
+        LOGGER.debug("Method getSvConfByName is starting with (param: {})", request.getName());
         GetSvConfByNameResponse response = new GetSvConfByNameResponse();
 
         SvConf svConf = svConfService.findByName(request.getName());
-
         response.setSvConf(svConf);
-
-        LOGGER.debug("Method getSvConfByName was executed with (object = {})", response.getSvConf());
+        LOGGER.debug("Method getSvConfByName was executed with (result: {})", response.getSvConf());
 
         return response;
     }
@@ -64,30 +60,24 @@ public class SvConfEndpoint {
 
     @PayloadRoot(namespace = URI, localPart = "addSvConfRequest")
     public void addSvConf(@RequestPayload AddSvConfRequest request) {
-        LOGGER.debug("Method addSvConf is starting with param (object = {})", request.getSvConf().toString());
-
+        LOGGER.debug("Method addSvConf is starting with (param: {})", request.getSvConf().toString());
         svConfService.add(request.getSvConf());
-
         LOGGER.debug("Method addSvConf was executed");
     }
 
 
     @PayloadRoot(namespace = URI, localPart = "updateSvConfRequest")
     public void updateSvConf(@RequestPayload UpdateSvConfRequest request) {
-        LOGGER.debug("Method updateSvConf is starting with param (object = {})", request.getSvConf());
-
+        LOGGER.debug("Method updateSvConf is starting with (param: {})", request.getSvConf());
         svConfService.update(request.getSvConf());
-
         LOGGER.debug("Method updateSvConf was executed");
     }
 
 
     @PayloadRoot(namespace = URI, localPart = "deleteSvConfRequest")
     public void deleteSvConf(@RequestPayload DeleteSvConfRequest request) {
-        LOGGER.debug("Method deleteSvConf is starting with param (name = {})", request.getName());
-
+        LOGGER.debug("Method deleteSvConf is starting with param (param: {})", request.getName());
         svConfService.delete(request.getName());
-
         LOGGER.debug("Method updateSvConf was executed");
     }
 
