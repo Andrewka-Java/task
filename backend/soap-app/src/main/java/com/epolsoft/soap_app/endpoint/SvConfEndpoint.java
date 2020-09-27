@@ -78,7 +78,7 @@ public class SvConfEndpoint {
     public void deleteSvConf(@RequestPayload DeleteSvConfRequest request) {
         LOGGER.debug("Method deleteSvConf is starting with param (param: {})", request.getName());
         svConfService.delete(request.getName());
-        LOGGER.debug("Method updateSvConf was executed");
+        LOGGER.debug("Method deleteSvConf was executed");
     }
 
 }

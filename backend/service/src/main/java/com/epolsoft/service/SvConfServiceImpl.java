@@ -7,11 +7,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 
 @Service
+@Transactional
 public class SvConfServiceImpl implements SvConfService{
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SvConfServiceImpl.class);
@@ -59,6 +61,6 @@ public class SvConfServiceImpl implements SvConfService{
     public void delete(String name) {
         LOGGER.debug("Method delete is executing with (param: {})", name);
         svConfDao.delete(name);
-        LOGGER.debug("Method add was executed");
+        LOGGER.debug("Method delete was executed");
     }
 }
