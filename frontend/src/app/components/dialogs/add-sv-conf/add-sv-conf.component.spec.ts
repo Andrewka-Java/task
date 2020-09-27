@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SvConfComponent } from './sv-conf.component';
+import { AddSvConfComponent } from './add-sv-conf.component';
 
-describe('SvConfComponent', () => {
-  let component: SvConfComponent;
-  let fixture: ComponentFixture<SvConfComponent>;
+describe('AddSvConfComponent', () => {
+  let component: AddSvConfComponent;
+  let fixture: ComponentFixture<AddSvConfComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SvConfComponent ]
+      declarations: [ AddSvConfComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SvConfComponent);
+    fixture = TestBed.createComponent(AddSvConfComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

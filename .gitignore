@@ -10,3 +10,4 @@ backend/dao-api/target
 backend/service-api/target
 backend/service/target
 backend/soap-app/target
+backend/rest-app/target

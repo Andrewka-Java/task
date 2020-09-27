@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand link-pointer"
+            (click)="findAll()">
+            Task
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Togglenavigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link link-pointer">Add</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <table class="table table-striped">
+
+                <thead class="thead-inverse">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Value</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr *ngFor="let svConf of svConfs; let index = index">
+                    <td>{{index + 1}}</td>
+                    <td>{{svConf.name}}</td>
+                    <td>{{svConf.value}}</td>
+                    <td>{{svConf.desc}}</td>
+                    <td>
+                        <button type="button" class="btn btn-dark float-right"
+                                (click)="delete(svConf.name)">
+                            Delete
+                        </button>
+                        <button type="button" class="btn btn-dark float-right">
+                            Edit
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</section>

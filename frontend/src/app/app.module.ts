@@ -1,24 +1,20 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { SvConfsComponent } from './components/sv-confs/sv-confs.component';
-import { SvConfComponent } from './components/sv-conf/sv-conf.component';
+import {AppComponent} from './components/app/app.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import {AppRoutingModule} from './app-routing.module';
+import { AddSvConfComponent } from './components/dialogs/add-sv-conf/add-sv-conf.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SvConfsComponent,
-    SvConfComponent
+    AddSvConfComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule,
-    AppRoutingModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

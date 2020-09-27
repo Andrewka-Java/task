@@ -1,19 +1,18 @@
 package com.epolsoft.rest_app.controller;
 
 import com.epolsoft.rest_app.client.Client;
-import com.epolsoft.sv_conf.*;
+import com.epolsoft.sv_conf.SvConf;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 
 import java.util.List;
 
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin("http://localhost:4200")
 public class SvConfController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SvConfController.class);
