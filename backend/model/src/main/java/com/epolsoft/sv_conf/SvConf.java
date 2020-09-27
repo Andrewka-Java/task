@@ -8,6 +8,7 @@
 
 package com.epolsoft.sv_conf;
 
+import javax.validation.constraints.Pattern;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -50,6 +51,7 @@ import javax.xml.bind.annotation.XmlType;
 public class SvConf {
 
     @XmlElement(required = true)
+    @Pattern(regexp = "[a-zA-Z_]*", message = "The value isn't correct")
     protected String name;
     @XmlElement(required = true)
     protected String value;
