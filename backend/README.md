@@ -7,6 +7,6 @@ Backend-часть проекта разработана с использова
 
 После запуска soap-app, будет доступно wsdl-описание SOAP-сервиса по адрессу: 
 
-    http:/localhost:8088/ws/sv_conf.wsd
+    http:/localhost:8088/ws/sv_conf.wsdl
     
 В папке task/backend лежит файл task-soapui-project.xml, представляющий из себя код c тестами для ПО SoapUI.
