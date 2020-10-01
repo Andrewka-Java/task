@@ -24,6 +24,6 @@
 5. В новом окне терминала перейдите в task/backend/rest-app;
 6. Выполните: mvn spring-boot:run;
 7. В новом окне терминала перейдите в папку task/frontend;
-8. Выполните: ng serve -o;
+8. Выполните: npm install && ng serve -o;
 9. Перейдите по ссылке: http://localhost:4200
 10. Готово :)
